@@ -23,7 +23,6 @@
       background: #1a1a1a;
       min-height: 100vh;
       box-shadow: inset 0 0 120px rgba(0,0,0,0.85);
-      overflow: hidden;
     }
 
     body {
@@ -130,7 +129,7 @@
       justify-content: center;
 
       max-width: 900px;
-      margin: 0 auto;
+      margin: 60px auto 0;
       width: 100%;
     }
 
@@ -168,6 +167,14 @@
 
     .project {
       margin-top: 40px;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      transition: border-color 0.3s;
+    }
+
+    .project:hover {
+      border-color: #00ff88;
     }
 
     .project h2 {
@@ -244,7 +251,7 @@
       <a href="#" class="nav-link active" data-section="home">home</a>
       <a href="#" class="nav-link" data-section="projects">projects</a>
       <a href="#" class="nav-link" data-section="homelab">homelab</a>
-      <a href="#" class="nav-link" data-section="about">about</a>
+      <a href="#" class="nav-link" data-section="about">resume</a>
       <a href="#" class="nav-link" data-section="contact">contact</a>
       <span class="nav-indicator" id="nav-indicator"></span>
     </nav>
@@ -259,31 +266,52 @@
       </h1>
 
       <p class="desc">
-        student. builder. problem solver.<br>
-        interested in linux, robotics,<br>
-        self-hosting and programming.
+        Linux. Infrastructure. Networking. Automation.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid #222; margin: 50px 0;">
+
+      <div style="font-size: 1.3rem; margin-bottom: 24px;">
+        <span style="color: #00ff88;">vaibhav@portfolio:~$</span>
+        <span style="color: white;"> whoami</span>
+      </div>
+      <p class="desc" style="margin-bottom: 0;">
+        I'm Vaibhav, a student who enjoys building and understanding systems from the ground up. Most of my time goes into Linux customization, self-hosted infrastructure, networking, and experimenting with automation.
+      </p>
+      <p class="desc" style="margin-bottom: 0;">
+        I like solving technical problems, optimizing workflows, and figuring out how different systems interact behind the scenes. My projects usually start with curiosity, break a few times, and end with me understanding the system much more deeply than before.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid #222; margin: 50px 0;">
+
+      <div style="font-size: 1.3rem; margin-bottom: 24px;">
+        <span style="color: #00ff88;">vaibhav@portfolio:~$</span>
+        <span style="color: white;"> what am i doing?</span>
+      </div>
+      <p class="desc" style="margin-bottom: 0;">
+        Currently focused on Linux systems, infrastructure, networking, automation, and intelligent systems through hands-on experimentation and real-world projects. I enjoy building reliable systems, self-hosting services, optimizing workflows, and understanding how different technologies interact behind the scenes. Most of my learning comes from building, breaking, debugging, and improving things over time.
       </p>
     </div>
 
-    <div id="section-projects" class="section">
-      <h1>projects</h1>
+    <div id="section-projects" class="section" style="text-align: center;">
+      <h1 style="text-transform: uppercase; letter-spacing: 0.05em;">projects</h1>
 
       <div class="project">
-        <h2>homelab</h2>
+        <h2 style="text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">homelab</h2>
         <p class="desc">
           self hosted services, linux servers and networking experiments
         </p>
       </div>
 
       <div class="project">
-        <h2>robotics</h2>
+        <h2 style="text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">robotics</h2>
         <p class="desc">
           diy electronics, embedded systems and robotics projects
         </p>
       </div>
 
       <div class="project">
-        <h2>portfolio website</h2>
+        <h2 style="text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">portfolio website</h2>
         <p class="desc">
           minimal website made with plain html and css
         </p>
@@ -296,13 +324,63 @@
       <section>
         <h2>server</h2>
 
-        <p>
-          <span class="label">cpu:</span> intel i3 5th gen<br>
-          <span class="label">ram:</span> 8gb ddr3<br>
-          <span class="label">storage:</span> 500gb hdd<br>
-          <span class="label">gpu:</span> gt 710<br>
-          <span class="label">os:</span> debian linux
-        </p>
+        <div style="border: 1px solid #222; border-radius: 12px; padding: 24px; margin-bottom: 40px;">
+          <p>
+            <span class="label">os:</span> Debian GNU/Linux 13 (trixie) x86_64<br>
+            <span class="label">host:</span> ThinkCentre M91p<br>
+            <span class="label">kernel:</span> Linux 6.12.86+deb13-amd64<br>
+            <span class="label">cpu:</span> Intel i5-2400 (4) @ 3.40 GHz<br>
+            <span class="label">gpu:</span> Intel 2nd Gen @ 1.10 GHz [Integrated]<br>
+            <span class="label">memory:</span> 8 GiB<br>
+            <span class="label">disk:</span> 500 GiB
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>stats</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 40px;">
+
+          <div style="border: 1px solid #222; border-radius: 12px; padding: 20px; text-align: center;">
+            <div class="label" style="margin-bottom: 8px;">temp</div>
+            <div style="font-size: 1.8rem; color: #00ff88;"><span id="temp">--</span>°C</div>
+          </div>
+
+          <div style="border: 1px solid #222; border-radius: 12px; padding: 20px; text-align: center;">
+            <div class="label" style="margin-bottom: 8px;">uptime</div>
+            <div style="font-size: 1.8rem; color: #00ff88;"><span id="uptime">--</span></div>
+          </div>
+
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+
+          <div style="border: 1px solid #222; border-radius: 12px; padding: 16px; background: #000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="label" style="color: #00ff88;">cpu</span>
+              <span style="color: #00ff88; font-size: 1.2rem;"><span id="cpu">--</span>%</span>
+            </div>
+            <canvas id="chart-cpu" width="400" height="120" style="width: 100%; height: 120px; display: block;"></canvas>
+          </div>
+
+          <div style="border: 1px solid #222; border-radius: 12px; padding: 16px; background: #000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="label" style="color: #00aaff;">ram</span>
+              <span style="color: #00aaff; font-size: 1.2rem;"><span id="ram">--</span>%</span>
+            </div>
+            <canvas id="chart-ram" width="400" height="120" style="width: 100%; height: 120px; display: block;"></canvas>
+          </div>
+
+          <div style="border: 1px solid #222; border-radius: 12px; padding: 16px; background: #000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="label" style="color: #ffaa00;">disk</span>
+              <span style="color: #ffaa00; font-size: 1.2rem;"><span id="disk">--</span>%</span>
+            </div>
+            <canvas id="chart-disk" width="400" height="120" style="width: 100%; height: 120px; display: block;"></canvas>
+          </div>
+
+        </div>
       </section>
 
       <section>
@@ -325,13 +403,17 @@
       </section>
 
       <section>
-        <h2>stats</h2>
+        <h2>websites hosted</h2>
 
-        <p>
-          uptime: 12 days<br>
-          power draw: ~45w<br>
-          status: online
-        </p>
+        <div class="site">
+          <b>tensorworks.vaibhav-sahu.com</b><br>
+          project showcase and tools
+        </div>
+
+        <div class="site">
+          <b>vaibhav-sahu.com</b><br>
+          personal portfolio website
+        </div>
       </section>
     </div>
 
@@ -350,10 +432,12 @@
   <footer>
 
     <div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 4px;">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-      github
+      <a href="https://github.com/Va1bhavS4hu" target="_blank" style="color: inherit; text-decoration: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 4px;">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        github
+      </a>
       <span style="margin: 0 12px; color: #444;">|</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 4px;">
         <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757ZM16 11.801V4.697l-5.803 3.546L16 11.801Z"/>
@@ -414,6 +498,85 @@
         moveIndicator(link);
       });
     });
+
+    const MAX_POINTS = 60;
+    const cpuHistory = [];
+    const ramHistory = [];
+    const diskHistory = [];
+
+    function drawChart(canvasId, data, color) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas || data.length < 2) return;
+      const ctx = canvas.getContext("2d");
+      const w = canvas.width;
+      const h = canvas.height;
+
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.strokeStyle = "#333";
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const y = (i / 4) * h;
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+      for (let i = 0; i <= 6; i++) {
+        const x = (i / 6) * w;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
+      const maxPoints = 60;
+      for (let i = 0; i < data.length; i++) {
+        const x = (i / (maxPoints - 1)) * w;
+        const y = h - (data[i] / 100) * h;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+
+    async function updateStats() {
+      try {
+        const res = await fetch("https://api.vaibhav-sahu.com/stats");
+        const data = await res.json();
+
+        const setStat = (id, val) => {
+          document.getElementById(id).innerText = val != null ? val : "--";
+        };
+
+        setStat("cpu", data.cpu);
+        setStat("ram", data.ram);
+        setStat("disk", data.disk);
+        setStat("temp", data.temp);
+
+        [cpuHistory, ramHistory, diskHistory].forEach((h, i) => {
+          const v = [data.cpu, data.ram, data.disk][i];
+          if (v != null) {
+            h.push(v);
+            if (h.length > MAX_POINTS) h.shift();
+          }
+        });
+
+        drawChart("chart-cpu", cpuHistory, "#00ff88");
+        drawChart("chart-ram", ramHistory, "#00aaff");
+        drawChart("chart-disk", diskHistory, "#ffaa00");
+
+        if (data.uptime != null) {
+          const hours = Math.floor(data.uptime / 3600);
+          document.getElementById("uptime").innerText = hours + "h";
+        }
+      } catch (e) {}
+    }
+
+    updateStats();
+    setInterval(updateStats, 5000);
   </script>
 
 </body>
